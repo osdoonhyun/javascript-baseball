@@ -3,8 +3,8 @@ const OutputView = require('./OutputView');
 const InputView = require('./InputView');
 const BaseballGame = require('./BaseballGame');
 const MakeRandomNumber = require('./MakeRandomNumber');
-const getStrikeCount = require('./GetStrikeCount');
-const getBallCount = require('./GetBallCount');
+const getStrikeCount = require('./getStrikeCount');
+const getBallCount = require('./getBallCount');
 const Validation = require('./Validation');
 
 class App {
@@ -22,10 +22,9 @@ class App {
 
   inputMyAnswer() {
     InputView.inputUserAnswer((userInput) => {
-      if (Validation.validateUserInput(userInput))
-        return this.getResult(userInput);
+      Validation.validateUserInput(userInput);
 
-      return this.throwError();
+      return this.getResult(userInput);
     });
   }
 
