@@ -1,8 +1,8 @@
-const BaseballGame = require('../src/BaseballGame');
-const getBallCount = require('../src/getBallCount');
-const getStrikeCount = require('../src/getStrikeCount');
-const { CountResult } = require('./BaseballGameParams');
-const BaseballGameParams = require('./BaseballGameParams');
+const BaseballGame = require('../src/domain/BaseballGame');
+const getStrikeCount = require('../src/utils/getStrikeCount');
+const getBallCount = require('../src/utils/getBallCount');
+const { CountResult } = require('../testparams/BaseballGameParams');
+const BaseballGameParams = require('../testparams/BaseballGameParams');
 
 describe('BaseballGame 동작 테스트', () => {
   test.each(
