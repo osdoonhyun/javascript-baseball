@@ -1,11 +1,11 @@
 const { Console } = require('@woowacourse/mission-utils');
-const OutputView = require('./OutputView');
-const InputView = require('./InputView');
-const BaseballGame = require('./BaseballGame');
-const MakeRandomNumber = require('./MakeRandomNumber');
-const getStrikeCount = require('./getStrikeCount');
-const getBallCount = require('./getBallCount');
-const Validation = require('./Validation');
+const OutputView = require('./UI/OutputView');
+const InputView = require('./UI/InputView');
+const BaseballGame = require('./domain/BaseballGame');
+const MakeRandomNumber = require('./utils/MakeRandomNumber');
+const getStrikeCount = require('./utils/getStrikeCount');
+const getBallCount = require('./utils/getBallCount');
+const Validation = require('./utils/Validation');
 
 class App {
   #myGame;
