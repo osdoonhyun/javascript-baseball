@@ -6,6 +6,7 @@ const MakeRandomNumber = require('./utils/MakeRandomNumber');
 const getStrikeCount = require('./utils/getStrikeCount');
 const getBallCount = require('./utils/getBallCount');
 const Validation = require('./utils/Validation');
+const { MESSAGE, INPUT } = require('./constants/constants');
 
 class App {
   #myGame;
@@ -42,8 +43,8 @@ class App {
   retryCheck() {
     OutputView.endGame();
     InputView.inputRetryOrQuit((input) => {
-      if (input === '1') return this.gameSetting();
-      if (input === '2') return this.quitGame();
+      if (input === INPUT.RETRY) return this.gameSetting();
+      if (input === INPUT.QUIT) return this.quitGame();
       return this.throwError();
     });
   }
@@ -53,7 +54,7 @@ class App {
   }
 
   throwError() {
-    throw new Error('[ERROR] 잘못된 값을 입력하셨습니다. 게임이 종료됩니다.');
+    throw new Error(MESSAGE.INPUT_ERROR);
   }
 }
 
